@@ -13,7 +13,7 @@ if (!$verify_result['success']) {
     if (isset($verify_result['error'])) {
       echo "<p>Error: " . $verify_result['error'] . "</p>";
   }
-    echo "<a href='kadai_login.php'>ログイン画面に戻る</a>";
+    echo "<a href='index.php'>ログイン画面に戻る</a>";
     exit();
 }
 
@@ -43,7 +43,7 @@ try {
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$user) {
   echo "<p>ログイン情報に誤りがあります</p>";
-  echo "<a href=kadai_login.php>ログイン</a>";
+  echo "<a href=index.php>ログイン</a>";
   exit();
 } else {
 
