@@ -46,10 +46,16 @@ if (!$user) {
   echo "<a href=kadai_login.php>ログイン</a>";
   exit();
 } else {
-  $_SESSION = array();
-  $_SESSION['session_id'] = session_id();
-  $_SESSION['is_admin'] = $user['is_admin'];
-  $_SESSION['username'] = $user['username'];
+
+// ログイン成功後にセッションIDを再生成
+session_regenerate_id(true);  // 新しいセッションIDを生成
+
+// セッションにユーザー情報を保存
+$_SESSION['session_id'] = session_id();  // 新しいセッションIDを保存
+$_SESSION['is_admin'] = $user['is_admin'];
+$_SESSION['username'] = $user['username'];
+
+// ログイン後にkadai_read.phpにリダイレクト
   header("Location:kadai_read.php");
   exit();
 }
