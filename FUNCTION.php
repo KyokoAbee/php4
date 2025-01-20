@@ -85,4 +85,17 @@ function verify_recaptcha($recaptcha_response)
     return $verify_result;
 }
 
+// 管理者かどうかを判断する関数
+function check_is_admin()
+{
+  // 管理者じゃない場合はログイン画面に
+  if (
+    !isset($_SESSION['is_admin']) ||
+    $_SESSION['is_admin'] != 1
+  ) {
+    header('Location:kadai_login.php');
+    exit();
+  }
+}
+
 ?>
