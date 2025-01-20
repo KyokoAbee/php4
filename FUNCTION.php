@@ -15,7 +15,7 @@ function connect_to_db()
 // ログイン状態のチェック関数
 function check_session_id()
 {
-  if (!isset($_SESSION["session_id"]) ||$_SESSION["session_id"] !== session_id()) {
+  if (!isset($_SESSION["session_id"]) || $_SESSION["session_id"] !== session_id()) {
     header('Location:kadai_login.php');
     exit();
   } else {

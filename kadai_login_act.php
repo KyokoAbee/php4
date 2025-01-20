@@ -40,12 +40,22 @@ try {
 }
 
 // ユーザ有無で条件分岐
+
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$user) {
   echo "<p>ログイン情報に誤りがあります</p>";
   echo "<a href=index.php>ログイン</a>";
   exit();
 } else {
+
+// // パスワードのハッシュを照合
+// if (!password_verify($password, $user['password'])) {
+//   echo "<p>ログイン情報に誤りがあります</p>";
+//       echo "<a href=index.php>ログイン</a>";
+//       exit();
+//   }
+
+
 
 // ログイン成功後にセッションIDを再生成
 session_regenerate_id(true);  // 新しいセッションIDを生成

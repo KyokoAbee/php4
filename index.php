@@ -22,7 +22,7 @@
 
         <div class="section">
             <h2>初めての方はこちら</h2>
-            <form action="" method="POST">
+            <form action="kadai_userinfo.php" method="POST">
                 <button>新規登録する</button>
             </form>
         </div>
